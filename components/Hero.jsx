@@ -1,12 +1,21 @@
-import React from "react";
+import { CourselImages } from "@/helper/coursel";
+import React, { useEffect, useState } from "react";
 
 export default function Hero() {
+  const [currImg, setcurrImg] = useState(1);
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setcurrImg((currImg + 1) % CourselImages.length);
+    }, 2200);
+
+    return () => clearInterval(intervalId);
+  }, [currImg]);
   return (
-    <section className="">
+    <section className="mt-28 md:mt-16">
       <div
         className=" max-w-[120rem] mx-auto py-64 relative"
         style={{
-          backgroundImage: `url("https://www.aalto.fi/sites/g/files/flghsv161/files/styles/3_0_1920w_640h_d/public/2023-01/Terveysteknologia%20aivot.png?h=6f14bdd4&itok=ORy_ai_6")`,
+          backgroundImage: `url(${CourselImages[currImg].img})`,
           backgroundColor: "#cccccc" /* Used if the image is unavailable */,
           backgroundPosition: "right" /* Center the image */,
           backgroundRepeat: "no-repeat" /* Do not repeat the image */,
@@ -18,22 +27,15 @@ export default function Hero() {
           <div className="col-start-1 space-y-4 bg-black text-white py-7 px-10 md:px-4">
             <div className="space-y-3">
               <h1 className="text-[2.3rem] md:text-[2.2rem] leading-10">
-                How tech is transforming diagnostics and care
+                {CourselImages[currImg].title}
               </h1>
               <p className="text-xl max-w-xl">
-                Read three inspiring stories of how Aaltonians are bringing new
-                hope to people who suffer from
+                {CourselImages[currImg].subTitle}
               </p>
             </div>
 
             <div className="flex flex-col">
-              {[
-                {
-                  title: "Alzheimer's disease",
-                },
-                { title: "ADHD" },
-                { title: "Alcoholism" },
-              ].map((e, idx) => {
+              {CourselImages[currImg].arr.map((e, idx) => {
                 return (
                   <div key={idx} className="flex -ml-2 gap-1 items-center">
                     <svg
@@ -58,13 +60,15 @@ export default function Hero() {
                         stroke-linejoin="round"
                       />
                     </svg>
-                     {e.title}
+                    {e.title}
                   </div>
                 );
               })}
             </div>
             <div className="flex justify-between items-center">
               <svg
+                onClick={() => currImg > 0 && setcurrImg(currImg - 1)}
+                className="cursor-pointer"
                 xmlns="http://www.w3.org/2000/svg"
                 width="40px"
                 height="40px"
@@ -87,16 +91,26 @@ export default function Hero() {
                   stroke-linejoin="round"
                 />
               </svg>
-              <div className="flex gap-4 items-center
-              ">
-             {[1,2,3,4].map((_,idx) => {
-                return (
-                    <div key={idx} className={`${idx === 1? "h-4 w-4" : "h-2 w-2"} bg-white rounded-full`}>
-                    </div>
-                )
-             })}
+              <div
+                className="flex gap-4 items-center
+              "
+              >
+                {[1, 2, 3, 4].map((_, idx) => {
+                  return (
+                    <div
+                      key={idx}
+                      className={`${
+                        idx === 1 ? "h-4 w-4" : "h-2 w-2"
+                      } bg-white rounded-full`}
+                    ></div>
+                  );
+                })}
               </div>
               <svg
+                onClick={() =>
+                  currImg < CourselImages.length - 1 && setcurrImg(currImg + 1)
+                }
+                className="cursor-pointer"
                 xmlns="http://www.w3.org/2000/svg"
                 width="40px"
                 height="40px"

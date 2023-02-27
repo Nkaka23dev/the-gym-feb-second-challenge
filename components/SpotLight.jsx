@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function SpotLight() {
   return (
-     <section className="bg-[#2D2D2D] pb-20 px-4">
+     <section className="bg-[#2D2D2D] pb-20 px-4 ">
      <div className="max-w-[87rem] mx-auto pt-20 flex md:flex-col justify-between items-center text-white">
        <div className='space-y-3'>
          <h1 className='text-[1.7rem]'>Spotlight</h1>
