@@ -15,9 +15,9 @@ export default function Hero() {
         }}
       >
         <div className="max-w-[88rem]  mx-auto grid md:grid-cols-1 grid-cols-2 absolute -bottom-10 left-10 md:inset-0">
-          <div className="col-start-1 space-y-4 bg-black text-white py-7 px-10">
+          <div className="col-start-1 space-y-4 bg-black text-white py-7 px-10 md:px-4">
             <div className="space-y-3">
-              <h1 className="text-[2.3rem] leading-10">
+              <h1 className="text-[2.3rem] md:text-[2.2rem] leading-10">
                 How tech is transforming diagnostics and care
               </h1>
               <p className="text-xl max-w-xl">

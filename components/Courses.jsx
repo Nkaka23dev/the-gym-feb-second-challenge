@@ -4,37 +4,41 @@ export default function Courses() {
   return (
    <>
        {/* section following hero icons */}
-       <section className="bg-[#252525] px-4 text-white py-20">
-          <div className="max-w-[87rem] mx-auto flex md:flex-col justify-between items-center text-white">
-            <div className='space-y-4'>
-              <p className='text-lg'>Find more current news and interesting events on the News and events page.</p>
-            </div>
-          </div>
-          <div className='max-w-[87rem]  mx-auto grid grid-cols-3 gap-5 md:grid-cols-1 pt-5 '>
-            {[
-              {
-                img: "https://www.aalto.fi/sites/g/files/flghsv161/files/styles/2_3_690w_300h_d/public/2023-02/PXL_20220622_103655210_0.jpg?h=419eefd5&itok=NNEygIOY",
-                text: ["Shrinking from the heat",
-                  "Reactive fabrics respond to changes in temperature"]
-              },
-              { img: "https://www.aalto.fi/sites/g/files/flghsv161/files/styles/2_3_690w_300h_d/public/2023-02/PXL_20220622_103655210_0.jpg?h=419eefd5&itok=NNEygIOY", text: ["Knit an Aalto hat for yourself or a friend!", "Follow Marja Niemi and Outi Elina Kansanen's knitting pattern to make a lovely gift for someone special"] },
-
-              { img: "https://www.aalto.fi/sites/g/files/flghsv161/files/styles/2_3_690w_300h_d/public/2023-02/PXL_20220622_103655210_0.jpg?h=419eefd5&itok=NNEygIOY", text: ["Knit an Aalto hat for yourself or a friend!", "Follow Marja Niemi and Outi Elina Kansanen's knitting pattern to make a lovely gift for someone special"] },
-
-            ].map((e, idx) => {
-              return (
-                <div className='text-white'>
-                  <img class="object-cover object-center aspect-square h-56 w-full" src={e.img} alt="" className='mb-3' />
-                  <div className=''>
-                    <p>School of Arts, Design and Architecture</p>
-                    <p>The School of Arts, Design and Architecture is one of the...</p>
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-        </section> 
-
+      {/* section following hero icons */}
+      <section className=" bg-[#252525] pb-24 px-4">
+     <div className="max-w-[87rem] mx-auto pt-20 flex md:flex-col justify-between items-center text-white">
+       <div className='space-y-3'>
+         <h1 className='text-[1.7rem]'>Studies and courses open to all</h1>
+       </div>
+       <div>
+         <button className='border border-white py-2 px-8 text-sm tracking-wide rounded-full'>See all events</button>
+       </div>
+     </div>
+     <div className='max-w-[87rem]  mx-auto grid grid-cols-3 gap-5 md:grid-cols-1 pt-5 '>
+       {[
+         {
+           title: "https://www.aalto.fi/sites/g/files/flghsv161/files/styles/o_914w_ah_n/public/2023-02/solvethesdgs_7.png?itok=3zTx6Lu6",
+           link: ["Shrinking from the heat",
+             "Reactive fabrics respond to changes in temperature"]
+         },
+         { title: "https://www.aalto.fi/sites/g/files/flghsv161/files/styles/o_914w_ah_n/public/2023-02/energy_futures_1920x1080_orange.jpg?itok=5ol6Q-Wo", link: ["Knit an Aalto hat for yourself or a friend!", "Follow Marja Niemi and Outi Elina Kansanen's knitting pattern to make a lovely gift for someone special"] },
+         { title: "https://www.aalto.fi/sites/g/files/flghsv161/files/styles/2_3_1380w_600h_n/public/2023-01/SSD2023_hero_image_1920x1200px_150dpi_2.png?h=3bf3b255&itok=tP6_uIIV", link: ["Aalto Startup Center makes global top three in 2021-2022 university business accelerator ranking", "UBI Global World Benchmark Study ranks top"] }
+       ].map((e, idx) => {
+         return (
+           <div className='text-white bg-[#2D2D2D] flex h-full content-start flex-col justify-between'>
+             <img src={e.title} alt="" className={`${idx === 2 ? 'mb-5' : ''} h-52 object-cover object-center aspect-video`} />
+             <div className='px-7 space-y-3'>
+               {e.link.map((val, ix) => {
+                 return (
+                   <p className={`${ix === 0 ? 'text-xl' : ''} `}>{val}</p>
+                 )
+               })}
+             </div>
+           </div>
+         )
+       })}
+     </div>
+   </section>
    </>
   )
 }

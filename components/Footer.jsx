@@ -3,7 +3,7 @@ import React from "react";
 export default function Footer() {
   return (
     <>
-      <footer className="bg-[#2D2D2D] border-t-2 border-white py-5">
+      <footer className="bg-[#2D2D2D] md:px-3 border-t-2 border-white py-5">
         <div className="max-w-[87rem] mx-auto ">
           <div className="grid grid-cols-4 text-white md:grid-cols-1">
             <div className=" space-y-8">
@@ -95,7 +95,7 @@ export default function Footer() {
                 },
               ].map((value, index) => {
                 return (
-                  <div key={index} className={`flex flex-col `}>
+                  <div key={index} className={`flex flex-col ${index === 3? '-mt-32 md:-mt-0':'mt-7'} `}>
                     <h1 className="text-xl">{value.title}</h1>
                     {value.desc.map((v, e) => {
                       return (
@@ -115,21 +115,21 @@ export default function Footer() {
                 Support new ideas, research, work and leadership development
                 towards a stronger Finland.
               </p>
-              <button className="border bg-[#FFFFFF] border-white py-2 px-10 rounded-full text-gray-800 ">
-                See all Aalto University news
+              <button className="border bg-[#FFFFFF] border-white py-1 px-7 rounded-full text-gray-800 ">
+              onate to Aalto University
               </button>
             </div>
           </div>
           <div className="border-t-2 border-white py-6 text-white flex justify-between md:flex-col mt-4">
-            <div className="flex gap-4">
-              {["privacy", "cookie", "feedback", "accessibility", "cookie"].map(
+            <div className="flex  md:flex-col gap-4">
+              {["Privacy notice", "Cookie policy", "FeedbaqK", "Accessibility statement", "Cookie settings"].map(
                 (item, i) => {
                   return <h1 className="capitalize  underline
                   " key={i}>{item}</h1>;
                 }
               )}
             </div>
-            <div className="flex gap-4">
+            <div className="flex gap-4 md:flex-col">
               {["suomeksi", "svenska", "english"].map(
                 (item, i) => {
                   return <h1 className="capitalize underline

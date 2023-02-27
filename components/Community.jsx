@@ -4,23 +4,38 @@ export default function Community() {
   return (
     <>
      {/* section with yello icons */}
-     <section className='bg-[#2D2D2D] -mt-20 pb-32 pt-40'>
-          <div className='text-white space-y-7'>
-            <div className='text-center text-2xl'>Important quicklinks</div>
-            <div className='max-w-6xl mx-auto  flex justify-between'>
-              {[1, 2, 3].map((e, idx) => {
-                return (
-                  <div className='flex items-center'>
-                    <div className='bg-yellow-500 p-7 rounded-full'>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" /></svg>
-                    </div>
-                    <h1 className='text-2xl'>For personnel</h1>
-                  </div>
-                )
-              })}
-            </div>
+     <section className="bg-[#2D2D2D] -mt-20 pb-28 pt-40">
+        <div className="text-white space-y-7">
+          <div className="text-center text-2xl tracking-wide">
+          Community voices
           </div>
-        </section>
+          <div className="max-w-6xl mx-auto md:flex-col   flex justify-between">
+            {[
+              {
+                title: "Aalto Handbook",
+                svg: "https://www.aalto.fi/sites/g/files/flghsv161/files/styles/quicklinks/public/2021-11/27400150666_8649bc706c_o_Original_thumbnail.jpg?h=d743a63a&itok=dwD4tEs5"
+              },
+              {
+                title: " Aalto Handbook",
+                svg: "https://www.aalto.fi/sites/g/files/flghsv161/files/styles/quicklinks/public/2021-11/27400150666_8649bc706c_o_Original_thumbnail.jpg?h=d743a63a&itok=dwD4tEs5"
+              },
+              {
+                title: "Aalto Handbook",
+                svg: "https://www.aalto.fi/sites/g/files/flghsv161/files/styles/quicklinks/public/2021-11/27400150666_8649bc706c_o_Original_thumbnail.jpg?h=d743a63a&itok=dwD4tEs5"
+              },
+            ].map((e, idx) => {
+              return (
+                <div key={idx} className="flex md:mx-auto md:mt-2 items-center gap-2">
+                  <div className=" fill-black text-black">
+                    <img className='rounded-full w-24 h-24 md:h-16 md:w-16' src={e.svg} alt="" />
+                  </div>
+                  <h1 className="text-xl">{e.title}</h1>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
     </>
   )
 }

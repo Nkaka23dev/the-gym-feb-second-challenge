@@ -32,7 +32,7 @@ export default function Home() {
         <SpotLight />
         <Events />
         {/* Empty section */}
-        <section className='py-10 bg-[#2D2D2D]'>
+        <section className='py-9 bg-[#2D2D2D]'>
         </section>
         {/* bg section */}
         <Aalto />

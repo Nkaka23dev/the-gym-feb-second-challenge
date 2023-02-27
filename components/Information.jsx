@@ -31,9 +31,9 @@ export default function Information() {
             return (
               <div className="text-white border-2 grid items-end border-white grid-cols-4">
                 <div className="px-7 mt-5 col-span-3 py-7">
-                  <p>School of Arts, Design and Architecture</p>
+                  <p className="text-lg">Ukraine war</p>
                   <p>
-                    The School of Arts, Design and Architecture is one of the...
+                  On this page, we will gather information on how Russia's i...
                   </p>
                 </div>
                 <img
