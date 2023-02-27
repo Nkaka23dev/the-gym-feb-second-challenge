@@ -2,11 +2,11 @@ import { CourselImages } from "@/helper/coursel";
 import React, { useEffect, useState } from "react";
 
 export default function Hero() {
-  const [currImg, setcurrImg] = useState(1);
+  const [currImg, setcurrImg] = useState(0);
   useEffect(() => {
     const intervalId = setInterval(() => {
       setcurrImg((currImg + 1) % CourselImages.length);
-    }, 2200);
+    }, 2500);
 
     return () => clearInterval(intervalId);
   }, [currImg]);
@@ -100,7 +100,7 @@ export default function Hero() {
                     <div
                       key={idx}
                       className={`${
-                        idx === 1 ? "h-4 w-4" : "h-2 w-2"
+                        idx === currImg ? "h-4 w-4" : "h-2 w-2"
                       } bg-white rounded-full`}
                     ></div>
                   );
