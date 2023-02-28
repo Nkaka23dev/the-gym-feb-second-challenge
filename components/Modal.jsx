@@ -6,8 +6,9 @@ import { GiGraduateCap } from "react-icons/gi";
 import { AiOutlineMenuUnfold, AiOutlinePlus, AiOutlineMinus} from "react-icons/ai";
 import { SlExclamation } from "react-icons/sl";
 import ModalMenu from "./ModalMenu";
+import Link from "next/link";
 
-export default function Modal() {
+export default function Modal({handClick}) {
   const [selected, setSelected] = useState(null);
 
   const handleClick = (idx) => {
@@ -17,6 +18,7 @@ export default function Modal() {
     <section className="h-screen fixed grid z-50 inset-0 border-t-2 border-white top-28">
       <div className="overflow-y-auto  relative">
         <motion.div
+          onClick={handClick}
           initial={{ w: 0, x: "100vw" }}
           transition={{ duration: 0.2 }}
           animate={{ w: "100%", x: 0 }}
@@ -49,18 +51,20 @@ export default function Modal() {
                 },
               ].map((e, val) => {
                 return (
-                  <div className="cursor-pointer text-white flex flex-col items-center">
+                  <Link href={e.title}>
+                    <div className="cursor-pointer text-white flex flex-col items-center">
                     {e.icon}
                     <h1 className="max-w-[5rem] text-center text-sm">
                       {e.title}
                     </h1>
                   </div>
+                  </Link>
                 );
               })}
             </div>
             <div className="flex gap-1 items-center">
               <SlExclamation />
-              Aalto community members please logjn to see internal content
+              Aalto community members please login to see internal content
             </div>
           </div>
           {[

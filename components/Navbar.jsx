@@ -22,7 +22,7 @@ export default function Navbar() {
   useEffect(() => {
     document.addEventListener("scroll", whenScroll);
   }, []);
-  
+
   const handClick = () => {
     setShow(show === false ? true : false);
   };
@@ -353,7 +353,7 @@ export default function Navbar() {
           </div>
         </div>
       </section>
-      {show && <Modal />}
+      {show && <Modal handClick={handClick} />}
     </>
   );
 }
