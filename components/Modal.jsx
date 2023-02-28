@@ -51,7 +51,7 @@ export default function Modal({handClick, hidde}) {
                 },
               ].map((e, val) => {
                 return (
-                  <Link href={e.title}>
+                  <Link href={e.title} className="hover:bg-[#4a4a4a] px-4">
                     <div className="cursor-pointer text-white flex flex-col items-center">
                     {e.icon}
                     <h1 className="max-w-[5rem] text-center text-sm">
