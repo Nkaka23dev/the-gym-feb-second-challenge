@@ -9,7 +9,7 @@ export default function SpotLight() {
          <p className='text-xl md:text-[1.3rem]'>Find more current news and interesting events on the News and events page.</p>
        </div>
        <div>
-         <button className='border md:hidden border-white py-2 px-8 text-sm tracking-wide rounded-full'>See all Aalto University news</button>
+         <button className='border hover:bg-blue-700 hover:text-white hover:border-blue-700 md:hidden border-white py-2 px-8 text-sm tracking-wide rounded-full'>See all Aalto University news</button>
        </div>
      </div>
      <div className='max-w-[87rem]  mx-auto grid grid-cols-3 gap-5 md:grid-cols-1 pt-5 '>

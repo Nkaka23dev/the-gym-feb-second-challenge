@@ -1,4 +1,8 @@
 import React from "react";
+import {GrFacebookOption} from "react-icons/gr"
+import {FaLinkedinIn,FaTwitter,FaInstagram} from "react-icons/fa"
+import {BsYoutube, BsPencilSquare} from "react-icons/bs"
+import {MdNotifications} from "react-icons/md"
 
 export default function Footer() {
   return (
@@ -56,10 +60,19 @@ export default function Footer() {
                 <p> Switchboard: +358 9 47001</p>
               </div>
               <div>
-                <h1 className="text-white text-md">Follow Us:</h1>
+                <h1 className="text-white text-xl">Follow Us:</h1>
+                 <div className="flex  mt-3">
+                 {[<GrFacebookOption  className="text-lg"/>,<FaLinkedinIn  className="text-lg"/>,<FaTwitter  className="text-lg"/>,<FaLinkedinIn  className="text-lg"/>,<FaInstagram  className="text-lg"/>,<BsYoutube  className="text-lg"/>,<MdNotifications  className="text-lg"/>,<BsPencilSquare  className="text-lg"/>].map((val,idx) => {
+                   return (
+                      <div className="hover:bg-[#4a4a4a] p-2 rounded-full">
+                        {val}
+                      </div>
+                   )
+                })}
+                 </div>
               </div>
             </div>
-            <div className="col-span-2 grid grid-cols-2 content-start md:grid-cols-1">
+            <div className="col-span-2 grid grid-cols-2 pb-7 content-start md:grid-cols-1">
               {[
                 {
                   title: "Quicklinks",
@@ -69,21 +82,21 @@ export default function Footer() {
                     "admissions",
                     "alumni",
                     "media",
-                    "it",
-                    "open",
-                    "aalto",
+                    "It Services",
+                    "Open University",
+                    "Aalto university Shop",
                   ],
                 },
                 {
-                  title: "Quicklinks",
+                  title: "Contact",
                   desc: ["campusmaps", "contact-Information"],
                 },
                 {
-                  title: "Quicklinks",
+                  title: "Latest",
                   desc: ["news", "events", "oareers"],
                 },
                 {
-                  title: "Quicklinks",
+                  title: "For Students",
                   desc: [
                     "for Students",
                     "student guides",
@@ -95,28 +108,30 @@ export default function Footer() {
                 },
               ].map((value, index) => {
                 return (
-                  <div key={index} className={`flex flex-col ${index === 3? '-mt-32 md:-mt-0':'mt-7'} `}>
-                    <h1 className="text-xl">{value.title}</h1>
+                  <div key={index} className={`flex items-start flex-col ${index === 3? '-mt-32 md:-mt-0':'mt-0'} `}>
+                    <h1 className={` ${index === 2?'mt-6':''} text-[1.4rem] font-semibold`}>{value.title}</h1>
+                    <div className="mt-1 ">
                     {value.desc.map((v, e) => {
                       return (
-                        <h1 key={e} className="underline capitalize">
+                        <h1 key={e} className="underline hover:bg-[#4a4a4a] cursor-pointer self-start capitalize">
                           {v}
                         </h1>
                       );
                     })}
+                    </div>
                   </div>
                 );
               })}
             </div>
 
             <div className="text-white space-y-5">
-              <h1 className="text-3xl">Together towards a better world.</h1>
+              <h1 className="text-2xl font-semibold">Together towards a better world.</h1>
               <p>
                 Support new ideas, research, work and leadership development
                 towards a stronger Finland.
               </p>
-              <button className="border bg-[#FFFFFF] border-white py-1 px-7 rounded-full text-gray-800 ">
-              onate to Aalto University
+              <button className="border hover hover:border-blue-700 hover:bg-blue-700 hover:text-white bg-[#FFFFFF] border-white py-1 px-7 rounded-full text-gray-800 ">
+              Donate to Aalto University
               </button>
             </div>
           </div>
@@ -124,7 +139,7 @@ export default function Footer() {
             <div className="flex  md:flex-col gap-4">
               {["Privacy notice", "Cookie policy", "FeedbaqK", "Accessibility statement", "Cookie settings"].map(
                 (item, i) => {
-                  return <h1 className="capitalize  underline
+                  return <h1 className="capitalize hover:bg-[#4a4a4a] cursor-pointer  underline
                   " key={i}>{item}</h1>;
                 }
               )}
@@ -132,7 +147,7 @@ export default function Footer() {
             <div className="flex gap-4 md:flex-col">
               {["suomeksi", "svenska", "english"].map(
                 (item, i) => {
-                  return <h1 className="capitalize underline
+                  return <h1 className="capitalize hover:bg-[#4a4a4a] cursor-pointer  underline
                   " key={i}>{item}</h1>;
                 }
               )}

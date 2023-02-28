@@ -8,21 +8,21 @@ import { SlExclamation } from "react-icons/sl";
 import ModalMenu from "./ModalMenu";
 import Link from "next/link";
 
-export default function Modal({handClick}) {
+export default function Modal({handClick, hidde}) {
   const [selected, setSelected] = useState(null);
 
   const handleClick = (idx) => {
     setSelected(selected === idx ? null : idx);
   };
   return (
-    <section className="h-screen fixed grid z-50 inset-0 border-t-2 border-white top-28">
+    <section className={`h-screen fixed grid z-50 inset-0 border-t-2 border-white ${hidde?'top-28':'top-10'} `}>
       <div className="overflow-y-auto  relative">
         <motion.div
           onClick={handClick}
           initial={{ w: 0, x: "100vw" }}
           transition={{ duration: 0.2 }}
           animate={{ w: "100%", x: 0 }}
-          className="bg-slate-300 opacity-80  fixed inset-0 top-28"
+          className={`bg-slate-300 opacity-80  fixed inset-0 ${hidde?'top-28':'top-10'}`}
         ></motion.div>
         <motion.div
           initial={{ w: 0, x: "100vw" }}

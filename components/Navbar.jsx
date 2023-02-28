@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Modal from "./Modal";
 import { VscClose } from "react-icons/vsc";
 import { ImQuotesRight } from "react-icons/im";
+import Link from "next/link";
 
 export default function Navbar() {
   const [hidde, setHide] = useState(true);
@@ -40,6 +41,7 @@ export default function Navbar() {
         >
           {/* First Div */}
           <div>
+            <Link href="/">
             <div
               onMouseEnter={() => setShowSvg1(false)}
               onMouseLeave={() => setShowSvg1(true)}
@@ -104,6 +106,7 @@ export default function Navbar() {
                 <ImQuotesRight className={`${hidde?'text-3xl -mt-5 -ml-3':'text-sm -mt-3'} transition-all duration-300 delay-500 `}/>
               )}
             </div>
+            </Link>
             <div
               // onMouseEnter={() => setShowSvg1(false)}
               // onMouseLeave={() => setShowSvg1(true)}
@@ -111,7 +114,7 @@ export default function Navbar() {
             >
               <motion.p
                 initial={{ fontSize: hidde ? 12 : 6 }}
-                className={`"text-xs`}
+                className={`"text-xs ${hidde?'block':'hidden'}`}
               >
                 Aalto University
               </motion.p>
@@ -370,7 +373,7 @@ export default function Navbar() {
           </div>
         </div>
       </section>
-      {show && <Modal handClick={handClick} />}
+      {show && <Modal handClick={handClick} hidde={hidde}/>}
     </>
   );
 }
