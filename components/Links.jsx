@@ -58,7 +58,7 @@ export default function Links() {
             ].map((e, idx) => {
               return (
                 <div key={idx} className="flex md:mt-6 md:m-auto items-center gap-2">
-                  <div className="bg-[#FFCD00] p-5 rounded-full fill-black text-black">
+                  <div className="bg-[#FFCD00] md:p-3 p-5 rounded-full fill-black text-black">
                     <div>{e.svg}</div>
                   </div>
                   <h1 className="text-xl">{e.title}</h1>
