@@ -1,12 +1,19 @@
 import { delay, motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import Modal from "./Modal";
+import {VscClose} from "react-icons/vsc"
 
 export default function Navbar() {
   const [hidde, setHide] = useState(true);
   const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = show ? "hidden" : "auto";
+    return () => (document.body.style.overflow = "scroll");
+  }, [show]);
+
   const whenScroll = () => {
-    if (window.scrollY >= 80) {
+    if (window.scrollY >= 20) {
       setHide(false);
     } else {
       setHide(true);
@@ -15,6 +22,7 @@ export default function Navbar() {
   useEffect(() => {
     document.addEventListener("scroll", whenScroll);
   }, []);
+  
   const handClick = () => {
     setShow(show === false ? true : false);
   };
@@ -24,8 +32,7 @@ export default function Navbar() {
         <motion.div
           animate={{ paddingBlock: hidde ? "17.6px" : 0 }}
           transition={{
-            duration:0.3,
-            delay:0.12
+            duration: 0.3,
           }}
           className={`max-w-[86rem] mx-auto py-[1.1rem]  flex-wrap flex justify-between items-center text-white`}
         >
@@ -38,8 +45,7 @@ export default function Navbar() {
                   height: hidde ? "63px" : "30px",
                 }}
                 transition={{
-                  duration:0.3,
-                  delay:0.12
+                  duration: 0.3,
                 }}
                 width="63px"
                 height="63px"
@@ -61,8 +67,7 @@ export default function Navbar() {
                   marginLeft: hidde ? "-20px" : "-10px",
                 }}
                 transition={{
-                  duration:0.3,
-                  delay:0.12
+                  duration: 0.3,
                 }}
                 className="-ml-5 mt-1"
                 width="55px"
@@ -90,14 +95,17 @@ export default function Navbar() {
               </motion.svg>
             </div>
             <div>
-              <p className={`${hidde ? "text-xs" : "text-[0.5rem]"}`}>
+              <motion.p
+                initial={{ fontSize: hidde ? 12 : 6 }}
+                className={`"text-xs`}
+              >
                 Aalto University
-              </p>
+              </motion.p>
             </div>
           </div>
           {/* second div */}
           <div className="flex items-center gap-10 flex-wrap">
-            <div className="flex flex-wrap gap-16 border-r border-white pr-12">
+            <div className="flex flex-wrap gap-12 border-r border-white pr-12">
               {[
                 {
                   title: "For personnel",
@@ -140,7 +148,7 @@ export default function Navbar() {
                 },
               ].map((e, idx) => {
                 return (
-                  <div className="flex items-center gap-1">
+                  <div className="flex hover:bg-[#4a4a4a] cursor-pointer px-1 items-center gap-1">
                     <div>{e.svg}</div>
                     <p>{e.title}</p>
                   </div>
@@ -235,7 +243,9 @@ export default function Navbar() {
                   <div
                     onClick={handClick}
                     key={idx}
-                    className={`flex gap-[0.35rem] cursor-pointer items-center`}
+                    className={`flex gap-[0.35rem] cursor-pointer hover:bg-[#4a4a4a] px-1 ${
+                      idx === 2 ? (show ? "hidden" : "block") : ""
+                    } items-center`}
                   >
                     <div>{e.svg}</div>
                     <p>{e.title}</p>
@@ -244,6 +254,12 @@ export default function Navbar() {
                 );
               })}
             </div>
+            {show && (
+              <div className="flex  border-b-2 bg-[#4a4a4a]  pb-1 items-center cursor-pointer" onClick={handClick}>
+                <VscClose className="text-lg stroke-white"/>
+                <p className="text-sm">Close Menu</p>
+              </div>
+            )}
             <button className="border border-white py-[0.40rem] bg-white text-gray-800 px-8 rounded-full">
               Log in
             </button>

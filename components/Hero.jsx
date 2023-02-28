@@ -6,7 +6,7 @@ export default function Hero() {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setcurrImg((currImg + 1) % CourselImages.length);
-    }, 2500);
+    }, 2000);
 
     return () => clearInterval(intervalId);
   }, [currImg]);
