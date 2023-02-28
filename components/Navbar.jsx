@@ -12,9 +12,8 @@ export default function Navbar() {
   const [showSvg1, setShowSvg1] = useState(true);
 
   const whenScroll2 = () => {
-    if (window.scrollY >= 150) {
+    if (window.scrollY >= 300) {
       setHide2(true);
-      console.log(window.scrollY)
     } else {
       setHide2(false);
     }

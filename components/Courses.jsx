@@ -11,10 +11,10 @@ export default function Courses() {
          <h1 className='text-[1.7rem]'>Studies and courses open to all</h1>
        </div>
        <div>
-         <button className=' hover:bg-blue-700 hover:text-white hover:border-blue-700 border border-white py-2 px-8 text-sm tracking-wide rounded-full'>See all events</button>
+         <button className=' hover:bg-blue-700  hover:text-white hover:border-blue-700 border border-white py-2 px-8 text-sm tracking-wide rounded-full'>See all events</button>
        </div>
      </div>
-     <div className='max-w-[87rem]  mx-auto grid grid-cols-3 gap-5 md:grid-cols-1 pt-5 '>
+     <div className='max-w-[87rem] mx-auto grid grid-cols-3 gap-5 md:grid-cols-1 pt-5 '>
        {[
          {
            title: "https://www.aalto.fi/sites/g/files/flghsv161/files/styles/o_914w_ah_n/public/2023-02/solvethesdgs_7.png?itok=3zTx6Lu6",
@@ -25,7 +25,7 @@ export default function Courses() {
          { title: "https://www.aalto.fi/sites/g/files/flghsv161/files/styles/2_3_1380w_600h_n/public/2023-01/SSD2023_hero_image_1920x1200px_150dpi_2.png?h=3bf3b255&itok=tP6_uIIV", link: ["Aalto Startup Center makes global top three in 2021-2022 university business accelerator ranking", "UBI Global World Benchmark Study ranks top"] }
        ].map((e, idx) => {
          return (
-           <div className='text-white bg-[#2D2D2D] flex h-full content-start flex-col justify-between'>
+           <div className='text-white pb-6 bg-[#2D2D2D] flex h-full content-start flex-col justify-between'>
              <img src={e.title} alt="" className={`${idx === 2 ? 'mb-5' : ''} h-52 object-cover object-center aspect-video`} />
              <div className='px-7 space-y-3'>
                {e.link.map((val, ix) => {

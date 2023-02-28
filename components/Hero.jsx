@@ -134,7 +134,14 @@ export default function Hero() {
                 />
               </svg>
             </div>
+            
           </div>
+          <div className="md:block hidden">
+              <img className="h-40 w-full object-cover object-center aspect-video"
+                src="https://www.aalto.fi/sites/g/files/flghsv161/files/styles/3_0_1920w_640h_d/public/2023-01/Terveysteknologia%20aivot.png?h=6f14bdd4&itok=ORy_ai_6"
+                alt=""
+              />
+            </div>
         </div>
       </div>
     </section>
