@@ -1,11 +1,13 @@
 import { delay, motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import Modal from "./Modal";
-import {VscClose} from "react-icons/vsc"
+import { VscClose } from "react-icons/vsc";
+import { ImQuotesRight } from "react-icons/im";
 
 export default function Navbar() {
   const [hidde, setHide] = useState(true);
   const [show, setShow] = useState(false);
+  const [showSvg1, setShowSvg1] = useState(true);
 
   useEffect(() => {
     document.body.style.overflow = show ? "hidden" : "auto";
@@ -38,7 +40,11 @@ export default function Navbar() {
         >
           {/* First Div */}
           <div>
-            <div className="flex items-center">
+            <div
+              onMouseEnter={() => setShowSvg1(false)}
+              onMouseLeave={() => setShowSvg1(true)}
+              className="flex items-center cursor-pointer"
+            >
               <motion.svg
                 animate={{
                   width: hidde ? "63px" : "30px",
@@ -60,41 +66,49 @@ export default function Navbar() {
                   fill="#ffffff"
                 />
               </motion.svg>
-              <motion.svg
-                animate={{
-                  width: hidde ? "55px" : "30px",
-                  height: hidde ? "60px" : "30px",
-                  marginLeft: hidde ? "-20px" : "-10px",
-                }}
-                transition={{
-                  duration: 0.3,
-                }}
-                className="-ml-5 mt-1"
-                width="55px"
-                height="60px"
-                viewBox="0 0 64 64"
-                aria-hidden="true"
-                role="img"
-                class="iconify iconify--emojione-monotone"
-                preserveAspectRatio="xMidYMid meet"
-              >
-                <g fill-rule="evenodd">
-                  <path
-                    d="M30.249 2.065C18.612 2.789 12.531 9.379 12 21.296h11.739c.147-4.128 2.451-7.214 6.741-7.669c4.211-.447 8.206.556 9.416 3.435c1.307 3.11-1.627 6.724-3.022 8.241c-2.582 2.813-6.776 4.865-8.95 7.9c-2.131 2.974-2.51 6.887-2.674 11.676h10.346c.145-3.062.349-5.995 1.742-7.898c2.266-3.092 5.65-4.541 8.486-6.983c2.709-2.334 5.559-5.147 6.043-9.501C53.32 7.466 42.683 1.289 30.249 2.065"
-                    fill="#ffffff"
-                  ></path>
+              {showSvg1 ? (
+                <motion.svg
+                  animate={{
+                    width: hidde ? "55px" : "30px",
+                    height: hidde ? "60px" : "26px",
+                    marginLeft: hidde ? "-20px" : "-10px",
+                  }}
+                  transition={{
+                    duration: 0.3,
+                  }}
+                  className="-ml-5 mt-1"
+                  width="55px"
+                  height="60px"
+                  viewBox="0 0 64 64"
+                  aria-hidden="true"
+                  role="img"
+                  class="iconify iconify--emojione-monotone"
+                  preserveAspectRatio="xMidYMid meet"
+                >
+                  <g fill-rule="evenodd">
+                    <path
+                      d="M30.249 2.065C18.612 2.789 12.531 9.379 12 21.296h11.739c.147-4.128 2.451-7.214 6.741-7.669c4.211-.447 8.206.556 9.416 3.435c1.307 3.11-1.627 6.724-3.022 8.241c-2.582 2.813-6.776 4.865-8.95 7.9c-2.131 2.974-2.51 6.887-2.674 11.676h10.346c.145-3.062.349-5.995 1.742-7.898c2.266-3.092 5.65-4.541 8.486-6.983c2.709-2.334 5.559-5.147 6.043-9.501C53.32 7.466 42.683 1.289 30.249 2.065"
+                      fill="#ffffff"
+                    ></path>
 
-                  <ellipse
-                    cx="30.515"
-                    cy="55.567"
-                    rx="6.532"
-                    ry="6.433"
-                    fill="#ffffff"
-                  ></ellipse>
-                </g>
-              </motion.svg>
+                    <ellipse
+                      cx="30.515"
+                      cy="55.567"
+                      rx="6.532"
+                      ry="6.433"
+                      fill="#ffffff"
+                    ></ellipse>
+                  </g>
+                </motion.svg>
+              ) : (
+                <ImQuotesRight className={`${hidde?'text-3xl -mt-5 -ml-3':'text-sm -mt-3'} transition-all duration-300 delay-500 `}/>
+              )}
             </div>
-            <div>
+            <div
+              // onMouseEnter={() => setShowSvg1(false)}
+              // onMouseLeave={() => setShowSvg1(true)}
+              className="cursor-pointer"
+            >
               <motion.p
                 initial={{ fontSize: hidde ? 12 : 6 }}
                 className={`"text-xs`}
@@ -255,12 +269,15 @@ export default function Navbar() {
               })}
             </div>
             {show && (
-              <div className="flex  border-b-2 bg-[#4a4a4a]  pb-1 items-center cursor-pointer" onClick={handClick}>
-                <VscClose className="text-lg stroke-white"/>
+              <div
+                className="flex  border-b-2 bg-[#4a4a4a]  pb-1 items-center cursor-pointer"
+                onClick={handClick}
+              >
+                <VscClose className="text-lg stroke-white" />
                 <p className="text-sm">Close Menu</p>
               </div>
             )}
-            <button className="border border-white py-[0.40rem] bg-white text-gray-800 px-8 rounded-full">
+            <button className="border hover:bg-blue-700 hover:border-blue-700 hover:text-white border-white py-[0.40rem] bg-white text-gray-800 px-8 rounded-full">
               Log in
             </button>
           </div>

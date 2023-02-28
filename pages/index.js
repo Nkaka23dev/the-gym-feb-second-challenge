@@ -52,7 +52,6 @@ export default function Home() {
         <Socials />
         {/* space */}
         <Space />
-        <Footer />
       </main>
     </>
   )
