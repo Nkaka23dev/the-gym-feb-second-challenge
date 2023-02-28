@@ -33,7 +33,7 @@ export default function Schools() {
                     <p className='text-xl md:text-xl'>School of Arts, Design and Architecture</p>
                     <p className='text-md md:hidden'>The School of Arts, Design and Architecture is one of the...</p>
                   </div>
-                  <img class="w-64 md:w-32 md:h-24 h-44 object-cover object-center aspect-square" src={e.title} alt="" className='mb-3 md:mb-0' />
+                  <img class="w-64 md:w-32 md:h-24 h-full object-cover object-center aspect-square" src={e.title} alt="" className='mb-3 md:mb-0' />
                 </div>
               )
             })}

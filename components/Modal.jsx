@@ -31,7 +31,7 @@ export default function Modal({handClick, hidde}) {
           className="max-w-[86rem] z-50 bg-[#2D2D2D]  px-20 ml-auto w-full text-white"
         >
           <div className=" flex justify-between items-center">
-            <div className="flex gap-7 py-7">
+            <div className="flex gap-4 py-7">
               {[
                 {
                   title: "Services",
@@ -51,7 +51,7 @@ export default function Modal({handClick, hidde}) {
                 },
               ].map((e, val) => {
                 return (
-                  <Link href={e.title} className="hover:bg-[#4a4a4a] px-4">
+                  <Link href={e.title} className="hover:bg-[#4a4a4a]">
                     <div className="cursor-pointer text-white flex flex-col items-center">
                     {e.icon}
                     <h1 className="max-w-[5rem] text-center text-sm">
