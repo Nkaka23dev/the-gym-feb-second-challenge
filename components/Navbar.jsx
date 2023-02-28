@@ -33,7 +33,7 @@ export default function Navbar() {
     <>
       <section className="bg-[#2D2D2D] md:hidden  z-50 top-0 right-0 left-0 fixed w-full  border-b border-white">
         <motion.div
-          animate={{ paddingBlock: hidde ? "17.6px" : 0 }}
+          animate={{ paddingBlock: hidde ? "17.6px" : "5px" }}
           transition={{
             duration: 0.3,
           }}

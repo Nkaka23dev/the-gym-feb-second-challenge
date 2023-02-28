@@ -6,7 +6,7 @@ export default function Community() {
      {/* section with yello icons */}
      <section className="bg-[#2D2D2D] -mt-20 pb-28 pt-40">
         <div className="text-white space-y-7">
-          <div className="text-center text-2xl tracking-wide">
+          <div className="text-center text-2xl tracking-wide transform hover:-translate-x-6">
           Community voices
           </div>
           <div className="max-w-6xl mx-auto md:flex-col   flex justify-between">
@@ -28,8 +28,8 @@ export default function Community() {
                 <div key={idx} className="flex md:mx-auto md:mt-2 items-center gap-2">
                   <div className=" fill-black text-black">
                     <img className='rounded-full w-24 h-24 md:h-16 md:w-16' src={e.svg} alt="" />
-                  </div>
-                  <h1 className="text-xl">{e.title}</h1>
+                  </div >
+                  <h1 className="text-xl hover:bg-[#4a4a4a]">{e.title}</h1>
                 </div>
               );
             })}

@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="grid grid-cols-4 text-white md:grid-cols-1">
             <div className=" space-y-8">
               {/* First Div */}
-              <div className="flex items-center">
+              <div className="flex items-center cursor-pointer">
                 <svg
                   width="50px"
                   height="50px"
@@ -147,7 +147,7 @@ export default function Footer() {
             <div className="flex gap-4 md:flex-col">
               {["suomeksi", "svenska", "english"].map(
                 (item, i) => {
-                  return <h1 className="capitalize hover:bg-[#4a4a4a] cursor-pointer  underline
+                  return <h1 className="capitalize  underline
                   " key={i}>{item}</h1>;
                 }
               )}
