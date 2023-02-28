@@ -279,7 +279,7 @@ export default function Navbar() {
               ].map((e, idx) => {
                 return (
                   <div
-                    onClick={handClick}
+                  onClick={idx === 2 ? handClick : undefined}
                     key={idx}
                     className={`flex gap-[0.35rem] cursor-pointer hover:bg-[#4a4a4a] px-1 ${
                       idx === 2 ? (show ? "hidden" : "block") : ""
